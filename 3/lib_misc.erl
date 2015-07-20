@@ -1,7 +1,7 @@
 -module(lib_misc).
 -export([split_2_odds_and_evens/1]).
 %-export([odds_and_evens/3]).
-
+-compile(export_all).
 
 %提取一个整数列表中的====奇数、偶数、
 split_2_odds_and_evens(L)->
@@ -14,5 +14,12 @@ odds_and_evens([H|T],Odds,Evens)->
 	end;
 odds_and_evens([],Odds,Evens)->
 	{lists:reverse(Odds),lists:reverse(Evens)}.
+
+%换位词，未成功运行
+perms([])->
+    [[]];
+perms(L) ->
+    [ [H|T] || H<-L,T<-perms(L--H)].
+
 
 

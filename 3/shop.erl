@@ -12,4 +12,4 @@ cost(milk) -> 7.
 total([ {W,N} | T ])-> cost(W)*N + total(T);
 total([])->0.
 
-%shop:total([{apples,3},{pears,4}]).
+%total([{apples,3},{pears,4}]).
